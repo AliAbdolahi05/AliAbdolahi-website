@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ali Abdolahi — Software Engineer</title>
+  <meta name="description" content="Ali Abdolahi — Building intelligent systems with elegant code." />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- Locomotive Scroll (optional) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#0b0e12] text-slate-200 font-inter leading-normal" data-theme="dark">
+  <!-- NAV -->
+  <nav class="fixed w-full z-50 backdrop-blur-md bg-black/30 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400/40 to-violet-500/30 flex items-center justify-center text-lg font-semibold ring-1 ring-slate-700">AA</div>
+        <div class="hidden sm:block">
+          <div class="text-sm font-semibold">Ali Abdolahi</div>
+          <div class="text-xs text-slate-400">Software Engineer</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="#projects" class="text-sm hover:text-cyan-300 transition">Projects</a>
+        <a href="resume.html" class="text-sm hover:text-cyan-300 transition">Resume</a>
+        <a href="#contact" class="text-sm hover:text-cyan-300 transition">Contact</a>
+        <button id="themeToggle" class="ml-2 px-3 py-1 rounded-md text-sm border border-slate-700">Theme</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="pt-24 min-h-[70vh]">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-8">
+      <div class="flex-1">
+        <h1 class="text-4xl sm:text-5xl font-bold leading-tight">Building intelligent systems with <span class="neon-highlight">elegant code</span>.</h1>
+        <p class="mt-4 text-slate-400 max-w-xl">I build full-stack applications, scripts and automation tools with a focus on clarity, performance, and maintainability. Python, Flask, JS, and a healthy obsession with developer experience.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-ghost">Get in Touch</a>
+        </div>
+
+        <!-- Current stack -->
+        <div class="mt-8 flex gap-3 items-center flex-wrap text-xs text-slate-300">
+          <div class="px-3 py-2 rounded-lg bg-slate-900/60 border border-slate-800">Python</div>
+          <div class="px-3 py-2 rounded-lg bg-slate-900/60 border border-slate-800">Flask</div>
+          <div class="px-3 py-2 rounded-lg bg-slate-900/60 border border-slate-800">JavaScript</div>
+          <div class="px-3 py-2 rounded-lg bg-slate-900/60 border border-slate-800">Tailwind</div>
+          <div class="px-3 py-2 rounded-lg bg-slate-900/60 border border-slate-800">AI</div>
+        </div>
+      </div>
+
+      <!-- Visual / Code panel -->
+      <div class="flex-1 max-w-lg w-full">
+        <div class="code-panel rounded-2xl p-4">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+            <span class="w-3 h-3 rounded-full bg-green-400"></span>
+            <div class="ml-auto text-xs text-slate-400">live</div>
+          </div>
+          <pre id="typing" class="text-sm font-fira leading-6"><code></code></pre>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold">Projects</h2>
+      <p class="text-slate-400 mt-2">Selected projects showcasing engineering rigor and design sensitivity.</p>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projectGrid">
+        <!-- Project Card Example: populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT (footer) -->
+  <footer id="contact" class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-xl font-semibold">Get in touch</h3>
+      <p class="text-slate-400">Want to collaborate or have a question? Send a message.</p>
+
+      <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="glass-card p-6 rounded-xl">
+          <form id="contactForm" class="flex flex-col gap-4">
+            <input name="name" placeholder="Your name" class="input" required />
+            <input name="email" placeholder="Your email" class="input" type="email" required />
+            <input name="subject" placeholder="Subject" class="input" />
+            <textarea name="message" placeholder="Message" class="input min-h-[120px]" required></textarea>
+            <div class="flex items-center gap-3">
+              <button type="submit" class="btn-primary">Send Message</button>
+              <div id="formMsg" class="text-sm text-slate-400"></div>
+            </div>
+          </form>
+        </div>
+        <div class="p-6 rounded-xl border border-slate-800 bg-slate-900/30">
+          <h4 class="font-semibold">Connect</h4>
+          <div class="mt-4 flex gap-3 items-center">
+            <a href="https://github.com/AliAbdolahi05" class="social" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="#" class="social">LinkedIn</a>
+            <a href="#" class="social">Telegram</a>
+          </div>
+
+          <div class="mt-8 text-sm text-slate-400">Or email: <a href="mailto:ali@example.com" class="text-cyan-300">ali@example.com</a></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
